@@ -185,31 +185,8 @@ void addSorted(int value)
         else
             ptr = ptr->next;
     }
-}
-
-void Insert(int value)
-{
-    Node *temp, *ptr;
-    temp = new Node;
-    ptr = start;
-    temp->data = value;
-    if(start == NULL)
+    if(ptr == NULL)
     {
-        start = temp;
-        temp->next = NULL;
-    }
-    else
-    {
-        while(ptr != NULL)
-        {
-            if(ptr->data <= value && ptr->next->data > value)
-            {
-                temp->next = ptr->next;
-                ptr->next = temp;
-                return;
-            }
-            else
-                ptr = ptr->next;
-        }
+        addNode(value);
     }
 }
